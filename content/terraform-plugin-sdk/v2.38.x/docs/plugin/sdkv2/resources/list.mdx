@@ -69,7 +69,7 @@ func (r *ThingListResource) List(ctx context.Context, req list.ListRequest, stre
 	var data ThingListResourceModel
 
 	// Read list config data into the model
-	resp.Diagnostics.Append(req.Config.Get(ctx, &data)...)
+	resp.Diagnostics.Append(req.Config.Get(ctx, &data...))
 	if resp.Diagnostics.HasError() {
 		return
 	}
